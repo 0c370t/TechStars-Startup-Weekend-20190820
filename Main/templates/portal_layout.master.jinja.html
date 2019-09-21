@@ -19,7 +19,7 @@
 		  href="{{ url_for("static", filename="favicon.ico") }}"
 	>
 
-	<title>Portal | TinySpace</title>
+	<title>{{ page_name or "Portal" }} | Tidy Space {{ "| %s" % portal }}</title>
 
 </head>
 <body>
@@ -27,17 +27,17 @@
 	<header class="uk-width-1-5 uk-background-secondary uk-light uk-height-1-1 uk-position-fixed">
 		<div class="uk-text-center uk-padding-small uk-width-1-1 uk-logo">
 			<img uk-img src="{{ url_for("static", filename="img/Logo-Only-Inverted.png") }}" class="uk-margin-remove">
-			<h1 class="uk-margin-remove">Tiny Space</h1>
+			<h1 class="uk-margin-remove">Tidy Space</h1>
 			<hr style="margin:0 25%">
 			<span class="uk-text-meta uk-margin-remove">{{ portal }}</span>
 		</div>
 		<div class="uk-text-right uk-position-center-right uk-margin-large-right">
-			<ul class="uk-nav">
+			<ul class="uk-nav uk-text-large">
 				{% block nav %}{% endblock %}
 			</ul>
 		</div>
 		<footer class="uk-width-1-1 uk-position-bottom uk-text-center uk-padding-small uk-text-small">
-			Copyright 2019 Tiny Space
+			Copyright 2019 Tidy Space
 		</footer>
 	</header>
 	<main class="uk-width-4-5 uk-overflow-auto uk-position-top-right uk-height-1-1">
