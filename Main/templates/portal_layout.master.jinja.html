@@ -15,6 +15,10 @@
 	<meta property="og:url" content="{{ request.url }}" />
 	<meta property="og:image" content="" />
 
+	<link rel="icon"
+		  href="{{ url_for("static", filename="favicon.ico") }}"
+	>
+
 	<title>Portal | TinySpace</title>
 
 </head>
@@ -25,26 +29,11 @@
 			<img uk-img src="{{ url_for("static", filename="img/Logo-Only-Inverted.png") }}" class="uk-margin-remove">
 			<h1 class="uk-margin-remove">Tiny Space</h1>
 			<hr style="margin:0 25%">
-			<span class="uk-text-meta uk-margin-remove">Homeowner</span>
+			<span class="uk-text-meta uk-margin-remove">{{ portal }}</span>
 		</div>
 		<div class="uk-text-right uk-position-center-right uk-margin-large-right">
 			<ul class="uk-nav">
-				<li><a>
-					Home
-					<span uk-icon="home"></span>
-				</a></li>
-				<li><a>
-					Cleaning Reports
-					<span uk-icon="print"></span>
-				</a></li>
-				<li><a>
-					Manage Properties
-					<span uk-icon="pencil"></span>
-				</a></li>
-				<li><a>
-					Messages
-					<span uk-icon="comments"></span>
-				</a></li>
+				{% block nav %}{% endblock %}
 			</ul>
 		</div>
 		<footer class="uk-width-1-1 uk-position-bottom uk-text-center uk-padding-small uk-text-small">
