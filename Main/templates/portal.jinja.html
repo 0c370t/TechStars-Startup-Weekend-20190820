@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css" />
+	<!-- Generic Meta Tags -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Template Project Created by Brian Donald">
+	<meta name="keywords" content="">
+	<meta name="author" content="Brian Donald">
+	<!-- OpenGraph Meta Tags -->
+	<meta property="og:title" content="Template Project" />
+	<meta property="og:description" content="Created by Brian Donald" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="{{ request.url }}" />
+	<meta property="og:image" content="" />
+
+	<title>Flask/UIKit/Docker Template</title>
+
+</head>
+<body>
+<div class="uk-width-1-1 uk-position-relative" uk-height-viewport="expand: true">
+	<header class="uk-width-1-5 uk-background-secondary uk-light uk-height-1-1 uk-position-fixed">
+		<div class="uk-text-center uk-padding-small uk-width-1-1">
+			<h1>HOA TOOL</h1>
+		</div>
+		<div class="uk-text-right uk-position-center-right uk-margin-large-right">
+			<ul class="uk-nav">
+				<li><a>
+					Home
+					<span uk-icon="home"></span>
+				</a></li>
+				<li><a>
+					Documents
+					<span uk-icon="print"></span>
+				</a></li>
+				<li><a>
+					Forms
+					<span uk-icon="pencil"></span>
+				</a></li>
+				<li><a>
+					Messages
+					<span uk-icon="comments"></span>
+				</a></li>
+			</ul>
+		</div>
+		<footer class="uk-width-1-1 uk-position-bottom uk-text-center uk-padding-small uk-text-small">
+			Copyright 2019 HOA TOOL
+		</footer>
+	</header>
+	<main class="uk-width-4-5 uk-overflow-auto uk-position-top-right uk-height-1-1">
+		<div class="uk-inline uk-background-cover uk-width-1-1 uk-height-1-1 uk-background-fixed uk-height-large uk-flex uk-flex-column uk-flex-center uk-margin-small"
+			 data-src="{{ url_for("static", filename="img/sunshine-valley.jpg") }}"
+			 uk-img
+		>
+			<div class="uk-overlay uk-overlay-primary uk-width-1-1 uk-text-center">
+				<h2>Sunshine Valley</h2>
+			</div>
+
+		</div>
+		<section class="uk-margin-small">
+			<main class="uk-container">
+				<div class="uk-margin-small">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget ultricies quam, at eleifend
+					massa.
+					Curabitur urna leo, consectetur a egestas sit amet, congue tincidunt ante. Quisque at metus eu leo
+					aliquet
+					venenatis id sed orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ornare
+					maximus
+					metus et maximus. Nulla facilisi. Maecenas eget risus nec metus condimentum dapibus eu et orci.
+					Vestibulum
+					vehicula eros nec eros sodales gravida. Quisque in ligula consectetur magna fermentum volutpat ut
+					eget
+					enim.
+					Etiam imperdiet eleifend eros, ut placerat velit sollicitudin sit amet. In tristique massa
+					ullamcorper,
+					posuere risus sit amet, condimentum felis. Pellentesque a ligula scelerisque, eleifend lectus et,
+					ultrices
+					massa.
+				</div>
+			</main>
+			<hr>
+		</section>
+
+	</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js"></script>
+
+</body>
+</html>
