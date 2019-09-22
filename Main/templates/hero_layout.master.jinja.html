@@ -20,30 +20,27 @@
 	>
 
 	<title>{{ page_name or "Portal" }} | Tidy Space {{ "| %s" % portal }}</title>
+	<script src="{{ url_for("static", filename="lib/jquery-3.4.1.min.js") }}"></script>
+	<script src="{{ url_for("static", filename="lib/jquery.serializeObject.min.js") }}"></script>
 
 </head>
 <body>
 <div class="uk-width-1-1 uk-position-relative" uk-height-viewport="expand: true">
-	<header class="uk-width-1-5 uk-background-secondary uk-light uk-height-1-1 uk-position-fixed">
-		<div class="uk-text-center uk-padding-small uk-width-1-1 uk-logo">
+	<div class="uk-width-1-1 uk-background-secondary uk-light uk-height-1-1 uk-position-relative">
+		<header class="uk-text-center uk-padding-small uk-container uk-container-xsmall">
 			<img uk-img src="{{ url_for("static", filename="img/Logo-Only-Inverted.png") }}" class="uk-margin-remove">
 			<h1 class="uk-margin-remove">Tidy Space</h1>
 			<hr style="margin:0 25%">
 			<span class="uk-text-meta uk-margin-remove">{{ portal }}</span>
-		</div>
-		<div class="uk-text-right uk-position-center-right uk-margin-large-right">
-			<ul class="uk-nav uk-text-large">
-				{% block nav %}{% endblock %}
-			</ul>
-		</div>
+		</header>
+		<main class="uk-text-center">
+			{% block main %}
+			{% endblock %}
+		</main>
 		<footer class="uk-width-1-1 uk-position-bottom uk-text-center uk-padding-small uk-text-small">
 			Copyright 2019 Tidy Space
 		</footer>
-	</header>
-	<main class="uk-width-4-5 uk-overflow-auto uk-position-top-right uk-height-1-1">
-		{% block main %}
-		{% endblock %}
-	</main>
+	</div>
 </div>
 
 <script src="{{ url_for("static", filename="lib/uikit.min.js") }}"></script>
