@@ -25,23 +25,21 @@
 
 </head>
 <body>
-<div class="uk-width-1-1 uk-position-relative" uk-height-viewport="expand: true">
-	<div class="uk-width-1-1 uk-background-secondary uk-light uk-height-1-1 uk-position-relative">
-		<header class="uk-text-center uk-padding-small uk-container uk-container-xsmall">
-			<img uk-img src="{{ url_for("static", filename="img/Logo-Only-Inverted.png") }}" class="uk-margin-remove">
-			<h1 class="uk-margin-remove">Tidy Space</h1>
-			<hr style="margin:0 25%">
-			<span class="uk-text-meta uk-margin-remove">{{ portal }}</span>
-		</header>
-		<main class="uk-text-center">
-			{% block main %}
-			{% endblock %}
-		</main>
-		<br><br><!-- Sticky Footers are big suck -->
-		<footer class="uk-width-1-1 uk-position-bottom uk-text-center uk-padding-small uk-text-small">
-			Copyright 2019 Tidy Space
-		</footer>
-	</div>
+<div class="uk-width-1-1 uk-position-relative uk-background-secondary uk-light " uk-height-viewport="expand: true">
+	<header class="uk-text-center uk-padding-small uk-container uk-container-xsmall">
+		<img uk-img src="{{ url_for("static", filename="img/Logo-Only-Inverted.png") }}" class="uk-margin-remove">
+		<h1 class="uk-margin-remove">Tidy Space</h1>
+		<hr style="margin:0 25%">
+		<span class="uk-text-meta uk-margin-remove">{{ portal }}</span>
+	</header>
+	<main class="uk-text-center">
+		{% block main %}
+		{% endblock %}
+	</main>
+	<br><br><!-- Sticky Footers are big suck -->
+	<footer class="uk-width-1-1 uk-position-bottom uk-text-center uk-padding-small uk-text-small">
+		Copyright 2019 Tidy Space
+	</footer>
 </div>
 
 <script src="{{ url_for("static", filename="lib/uikit.min.js") }}"></script>
