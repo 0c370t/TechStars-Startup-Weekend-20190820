@@ -22,7 +22,7 @@
 				<th>Bathrooms</th>
 				<th>Due Date</th>
 				<th>Estimated Payout</th>
-				<th>Schedule</th>
+				<th class="uk-width-small">Schedule</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -31,7 +31,9 @@
 				<td>2805 Mayville Place, Town, MO <span class="uk-text-meta uk-text-small">(2 Miles)</span></td>
 				<td>3</td>
 				<td>3</td>
-				<td>2019-09-30, 12:00am</td>
+				<td>
+					<span uk-tooltip="title: Next Monday at Noon">2019-09-30, 12:00am</span>
+				</td>
 				<td>$$</td>
 				<td><a class="uk-button uk-button-secondary uk-width-1-1"><span uk-icon="calendar"></span></a></td>
 			</tr>
@@ -40,12 +42,57 @@
 				<td>1296 Orchard Parkway, Town, MO <span class="uk-text-meta uk-text-small">(10 Miles)</span></td>
 				<td>2</td>
 				<td>1.5</td>
-				<td>2019-09-25, 12:00am</td>
+				<td>
+					<span uk-tooltip="title: Wednesday at Noon">2019-09-25, 12:00am</span>
+				</td>
 				<td>$</td>
 				<td><a class="uk-button uk-button-secondary uk-width-1-1"><span uk-icon="calendar"></span></a></td>
 			</tr>
 
 			</tbody>
 		</table>
+	</div>
+	<div class="uk-container uk-container-expand">
+		<h3>Accepted Jobs</h3>
+		<table class="uk-table">
+			<caption>Addresses you have previously cleaned will be indicated with a "<span uk-icon="info"></span>"
+			</caption>
+			<thead>
+			<tr>
+				<th></th>
+				<th>Address</th>
+				<th>Bedrooms</th>
+				<th>Bathrooms</th>
+				<th>Due Date</th>
+				<th>Estimated Payout</th>
+				<th class="uk-width-small"></th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td><span uk-icon="info"></span></td>
+				<td>681 Florence Street, Town, MO <span class="uk-text-meta uk-text-small">(2 Miles)</span></td>
+				<td>1</td>
+				<td>1</td>
+				<td>
+					<span uk-tooltip="title: Next Monday at Noon">2019-09-30, 12:00am</span>
+				</td>
+				<td>$</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<hr class="uk-divider-icon">
+	<div class="uk-container uk-container-expand">
+		<div class="uk-flex uk-child-width-1-3">
+			<div>
+				<h3>Resources:</h3>
+				<button class="uk-button uk-button-default uk-box-shadow-hover-medium"><span uk-icon="link"></span>
+					Modify Your Schedule
+				</button>
+			</div>
+		</div>
+
 	</div>
 {% endblock %}

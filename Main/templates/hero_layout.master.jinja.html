@@ -26,11 +26,18 @@
 </head>
 <body>
 <div class="uk-width-1-1 uk-position-relative uk-background-secondary uk-light " uk-height-viewport="expand: true">
-	<header class="uk-text-center uk-padding-small uk-container uk-container-xsmall">
-		<img uk-img src="{{ url_for("static", filename="img/Logo-Only-Inverted.png") }}" class="uk-margin-remove">
-		<h1 class="uk-margin-remove">Tidy Space</h1>
-		<hr style="margin:0 25%">
-		<span class="uk-text-meta uk-margin-remove">{{ portal }}</span>
+	<header class="uk-text-center uk-padding-small uk-container uk-container-xsmall uk-flex uk-flex-center uk-flex-middle uk-flex-wrap">
+		<div class="uk-width-1-1@l uk-width-1-4">
+			<img uk-img src="{{ url_for("static", filename="img/Logo-Only-Inverted.png") }}"
+				 class="uk-margin-remove"
+			>
+		</div>
+		<div class="uk-text-center@l uk-text-left uk-width-1-1@l uk-width-3-4">
+			<h1 class="uk-margin-remove">Tidy Space</h1>
+			<hr style="margin:0 25%" class="uk-visible@l">
+			<span class="uk-text-meta uk-margin-remove">{{ portal }}</span>
+		</div>
+
 	</header>
 	<main class="uk-text-center">
 		{% block main %}
