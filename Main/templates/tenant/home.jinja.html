@@ -3,21 +3,25 @@
 {% block main %}
 	<div class="uk-container uk-container-xsmall uk-margin-large">
 		<h2>Welcome to a Tidy Space</h2>
-		<p>Your home away from home was cleaned by Tidy Space. We network skilled hospitality professionals with hosts like
-		   yours, to make
-		   sure you have the best possible experience. We would like your feedback on how Tidy your space is.</p>
+		<p>Your home away from home was cleaned by Tidy Space. We network skilled hospitality professionals, to hosts
+		   like yours, to make sure you have the best possible experience. We would like your feedback on how Tidy your
+		   space is.</p>
 	</div>
 	<div class="uk-container uk-container-medium uk-margin-large">
-	<h4>How Tidy was your space?</h4>
+		<h4>How Tidy was your space?</h4>
 		<div class="uk-width-1-1 uk-flex uk-flex-row uk-child-width-1-1@m uk-child-width-expand@l uk-flex-wrap">
-			<button class="uk-button uk-button-default uk-flex uk-flex-column@l uk-flex-center uk-flex-between uk-margin-small-top uk-margin-small-bottom" uk-toggle="target: #thanks-modal">
+			<button class="uk-button uk-button-default uk-flex uk-flex-column@l uk-flex-center uk-flex-between uk-margin-small-top uk-margin-small-bottom"
+					uk-toggle="target: #thanks-modal"
+			>
 				<span>
 					<span uk-icon="icon: plus; ratio: 0.8;"></span>
 					<span uk-icon="icon: plus; ratio: 0.8;"></span>
 				</span>
 				Very Tidy
 			</button>
-			<button class="uk-button uk-button-default uk-flex uk-flex-column@l uk-flex-center uk-flex-between uk-margin-small-top uk-margin-small-bottom" uk-toggle="target: #thanks-modal">
+			<button class="uk-button uk-button-default uk-flex uk-flex-column@l uk-flex-center uk-flex-between uk-margin-small-top uk-margin-small-bottom"
+					uk-toggle="target: #thanks-modal"
+			>
 				<span>
 					<span uk-icon="icon: plus; ratio: 0.8;"></span>
 				</span>
@@ -53,7 +57,7 @@
 	<div>
 		<!-- This is the modal -->
 		<div id="feedback-form" uk-modal>
-			<div class="uk-modal-dialog uk-modal-body">
+			<div class="uk-modal-dialog uk-modal-body uk-light uk-background-secondary">
 				<h2 class="uk-modal-title">We're Sorry</h2>
 				<p>It is our goal to ensure every space is tidy before you arrive. Please let us know what we can do
 				   better next time. Feel free to attach pictures of the issue if you feel that will help.</p>
@@ -69,8 +73,8 @@
 			</div>
 		</div>
 		<div id="thanks-modal" uk-modal>
-			<div class="uk-light">
-				<h2>Thank you for your feedback!</h2>
+			<div class="uk-light uk-modal-dialog uk-modal-body uk-background-secondary">
+				<h2 class="uk-modal-title">Thank you for your feedback!</h2>
 				<p>
 					<i>Have an excellent day,
 						<br>
