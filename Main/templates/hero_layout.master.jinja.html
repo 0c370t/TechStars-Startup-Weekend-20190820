@@ -19,7 +19,7 @@
 		  href="{{ url_for("static", filename="favicon.ico") }}"
 	>
 
-	<title>{{ page_name or "Portal" }} | Tidy Space {{ "| %s" % portal }}</title>
+	<title>{{ page_name or "Portal" }} | Tidy Space {{ "| %s" % portal if portal }}</title>
 	<script src="{{ url_for("static", filename="lib/jquery-3.4.1.min.js") }}"></script>
 	<script src="{{ url_for("static", filename="lib/jquery.serializeObject.min.js") }}"></script>
 
