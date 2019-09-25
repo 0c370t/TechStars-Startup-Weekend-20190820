@@ -2,67 +2,92 @@
 {% set page_name="Welcome" %}
 {% set portal="Reliability, Efficiency, Affordability" %}
 {% block main %}
-	<div class="uk-container uk-container-small uk-margin-small">
-		<h2>Welcome</h2>
-		<p>
-			Tidy Space is currently under construction as part of the Techstars Startup Weekend in Kansas City. We are
-			working to provide a solution to connect AirBnB property owners with reliable, efficient, affordable
-			turnover cleaning services. If you are interested in receiving information as we move
-			towards a market launch, please fill out the form below, and our team will be in touch.
-		</p>
-		<p>
-			<i>Have an excellent day,
-				<br>
-			   ~ The Tidy Space Team
-			</i>
-		</p>
-		<hr class="uk-divider-icon">
-	</div>
-	<div class="uk-container uk-container-xsmall uk-margin-medium">
-		<form id="mailing-list-signup">
-			<h4>Waiting List Sign-Up</h4>
-			<input type="text" placeholder="*First Name" class="uk-input uk-margin-small" name="FirstName" required>
-			<input type="text" placeholder="*Last Name" class="uk-input uk-margin-small" name="LastName" required>
-			<input type="text" placeholder="Company Name" class="uk-input uk-margin-small" name="Company">
-			<input type="text" placeholder="*E-Mail" class="uk-input uk-margin-small" name="Email" required>
-			<input type="text" placeholder="Phone Number" class="uk-input uk-margin-small" name="Phone">
-			<button type="button" uk-tooltip="title: We will never sell your information or send you spam."
-					class="uk-button uk-button-default" id="submit-form" onclick="submitForm(this)"
-			>Submit
-			</button>
-		</form>
-		<script>
-            // Post to google sheets
-            // https://script.google.com/macros/s/AKfycbwZINXjD8MsT7YMdeAvy2wFDtAUE5-PKxBboCE2YclO9uK1rUQ/exec
-            // Please don't make this go explode-y, I like my code to be not explode-y. Thank you!
+<div class="uk-container uk-container-small uk-margin-small">
+	<h2>Welcome</h2>
+	<p>
+		Tidy Space is currently under construction as part of the Techstars Startup Weekend in Kansas City. We are
+		working to provide a solution to connect AirBnB property owners with reliable, efficient, affordable
+		turnover cleaning services. If you are interested in receiving information as we move
+		towards a market launch, please fill out the form below, and our team will be in touch.
+	</p>
+	<p>
+		<i>Have an excellent day,
+			<br>
+			~ The Tidy Space Team
+		</i>
+	</p>
+	<button uk-toggle="target: #demo-modal" type="button" class="uk-button uk-button-default">Dashboard Examples</button>
 
-            var $form = $('form#mailing-list-signup'),
-                url = 'https://script.google.com/macros/s/AKfycbwZINXjD8MsT7YMdeAvy2wFDtAUE5-PKxBboCE2YclO9uK1rUQ/exec';
+	<hr class="uk-divider-icon">
+</div>
+<div class="uk-container uk-container-xsmall uk-margin-medium">
+	<form id="mailing-list-signup">
+		<h4>Waiting List Sign-Up</h4>
+		<input type="text" placeholder="*First Name" class="uk-input uk-margin-small" name="FirstName" required>
+		<input type="text" placeholder="*Last Name" class="uk-input uk-margin-small" name="LastName" required>
+		<input type="text" placeholder="Company Name" class="uk-input uk-margin-small" name="Company">
+		<input type="text" placeholder="*E-Mail" class="uk-input uk-margin-small" name="Email" required>
+		<input type="text" placeholder="Phone Number" class="uk-input uk-margin-small" name="Phone">
+		<button type="button" uk-tooltip="title: We will never sell your information or send you spam." class="uk-button uk-button-default" id="submit-form" onclick="submitForm(this)">Submit
+		</button>
+	</form>
+	<script>
+		// Post to google sheets
+		// https://script.google.com/macros/s/AKfycbwZINXjD8MsT7YMdeAvy2wFDtAUE5-PKxBboCE2YclO9uK1rUQ/exec
+		// Please don't make this go explode-y, I like my code to be not explode-y. Thank you!
 
-            function submitForm(e) {
-                debugger;
-                var missingFields = false;
-                $("#mailing-list-signup").children("input[required]").each(
-                    (i, j) => {
-                        if (!j.value && !missingFields) {
-                            UIkit.notification({
-                                message: 'Please fill out all required fields',
-                                status: 'danger',
-                                timeout: 5000
-                            });
-                            missingFields = true;
-                            console.info("Cancelling post, form is not correct");
-                        }
-                    });
-                if (missingFields)
-                    return false;
-                $.ajax({
-                    url: url,
-                    method: "GET",
-                    dataType: "json",
-                    data: $('form#mailing-list-signup').serializeObject()
-                }).then(response => console.log(response));
-            }
-		</script>
+		var $form = $('form#mailing-list-signup'),
+			url = 'https://script.google.com/macros/s/AKfycbwZINXjD8MsT7YMdeAvy2wFDtAUE5-PKxBboCE2YclO9uK1rUQ/exec';
+
+		function submitForm(e) {
+			debugger;
+			var missingFields = false;
+			$("#mailing-list-signup").children("input[required]").each(
+				(i, j) => {
+					if (!j.value && !missingFields) {
+						UIkit.notification({
+							message: 'Please fill out all required fields',
+							status: 'danger',
+							timeout: 5000
+						});
+						missingFields = true;
+						console.info("Cancelling post, form is not correct");
+					}
+				});
+			if (missingFields)
+				return false;
+			$.ajax({
+				url: url,
+				method: "GET",
+				dataType: "json",
+				data: $('form#mailing-list-signup').serializeObject()
+			}).then(response => console.log(response));
+		}
+	</script>
+</div>
+
+<div id="demo-modal" uk-modal>
+	<div class="uk-modal-body uk-modal-dialog uk-light uk-background-secondary">
+		<h2 class="uk-modal-title">Dashboard Examples</h2>
+		<button class="uk-modal-close-default" type="button" uk-close></button>
+		<span class="uk-text-meta">Please note these are provided for demonstration purposes and may not reflect the final design</span>
+		<div class="uk-child-width-1-3@m" uk-grid uk-lightbox="animation: slide">
+		    <div>
+		        <a class="uk-inline" href="{{url_for("static", filename="img/demo/homeowner.png")}}" data-caption="Homeowner Property Dashboard">
+		            <img src="{{url_for("static", filename="img/demo/homeowner.png")}}" alt="Homeowner Property Dashboard">
+		        </a>
+		    </div>
+		    <div>
+		        <a class="uk-inline" href="{{url_for("static", filename="img/demo/hospitality.png")}}" data-caption="Hospitality Professional Dashboard">
+		            <img src="{{url_for("static", filename="img/demo/hospitality.png")}}" alt="Homeowner Property Dashboard">
+		        </a>
+		    </div>
+		    <div>
+		        <a class="uk-inline" href="{{url_for("static", filename="img/demo/guest.png")}}" data-caption="Tenant Portal">
+		            <img src="{{url_for("static", filename="img/demo/guest.png")}}" alt="Homeowner Property Dashboard">
+		        </a>
+		    </div>
+		</div>
 	</div>
+</div>
 {% endblock %}
